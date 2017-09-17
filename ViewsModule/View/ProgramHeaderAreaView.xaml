@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="ViewsModule.View.ProgramHeaderAreaView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ViewsModule.View"
+             mc:Ignorable="d" 
+             BorderBrush="Black"
+             BorderThickness="5"  
+             d:DesignHeight="300" d:DesignWidth="1000">
+    <Grid >
+        <Grid.Resources>
+            <ResourceDictionary>
+                <Style x:Key="{x:Type TextBlock}" TargetType="TextBlock">
+                    <Setter Property="Margin" Value="5,5"/>
+                </Style>
+            </ResourceDictionary>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".25*"/>
+            <ColumnDefinition Width=".5*"/>
+            <ColumnDefinition Width=".25*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock VerticalAlignment="Center" FontSize="25" Text="System ABC is Live Online"/>
+        <StackPanel Orientation="Horizontal" Grid.Column="1">
+            <Image Stretch="None" Source="/ViewsModule;component/Assets/AMlogo.JPG"/>
+            <Image Stretch="None" Source="/ViewsModule;component/Assets/ViziLogo.JPG"/>
+        </StackPanel>
+        <TextBlock VerticalAlignment="Center" FontSize="25" Grid.Column="2" Text="September 1, 2008  Shift 1"/>
+    </Grid>
+</UserControl>
