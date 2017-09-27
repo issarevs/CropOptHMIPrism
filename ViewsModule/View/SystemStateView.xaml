@@ -6,14 +6,56 @@
              xmlns:local="clr-namespace:ViewsModule.View"
              mc:Ignorable="d" 
              BorderBrush="Black"
-             BorderThickness="5"               
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid >
-        <Grid.RowDefinitions>
+             BorderThickness="1"               
+             d:DesignHeight="300" d:DesignWidth="400">
+    <!--<Grid >-->
+    <!--<Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Label HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,2" Content="System State"/>
-        <Image Grid.Row="1" Stretch="None" Source="/ViewsModule;component/Assets/Props/SystemState.png"/>
-    </Grid>
+        <Image Grid.Row="1" Stretch="None" Source="/ViewsModule;component/Assets/Props/SystemState.png"/>-->
+    <Canvas Width="300" Height="150">
+        <Canvas Height="150" Canvas.Left="30" Width="30" Name="rollers">
+            <StackPanel Orientation="Vertical" Canvas.Bottom="90" >
+                <Ellipse Width="20" Height="20" Fill="Black"/>
+                <Ellipse Width="10" Height="10" Fill="Black"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Canvas.Bottom="30" >
+                <Ellipse Width="10" Height="10" Fill="Black"/>
+                <Ellipse Width="20" Height="20" Fill="Black"/>
+            </StackPanel>
+        </Canvas>
+        <Canvas Canvas.Bottom="130" Canvas.Left="50" Name="camera">
+            <Rectangle Width="5" Height="10" Fill="Black" Canvas.Left="20"/>
+            <Path Stroke="Black" StrokeThickness="1" StrokeDashArray="4 4" Data="M22,10 L10,38" />
+            <Path Stroke="Black" StrokeThickness="1" StrokeDashArray="4 4" Data="M23,10 L37,38" />
+        </Canvas>
+        <Canvas Canvas.Bottom="130" Canvas.Left="130" Name="shears">
+            <Path Stroke="Black" Fill="Black">
+                <Path.Data>
+                    <PathGeometry Figures="M 120,20 L 120,40 L 125,30 L 125, 20" />
+                </Path.Data>
+            </Path>
+            <Path Stroke="Black" Fill="Black">
+                <Path.Data>
+                    <PathGeometry Figures="M 113,90 L 113,80 L 118,70 L 118, 90" />
+                </Path.Data>
+            </Path>
+        </Canvas>
+        <Canvas Canvas.Left="5" HorizontalAlignment="Center" Width="80" Height="30" Canvas.Bottom="60" Name="slab1">
+            <Rectangle Fill="Red" Width="80" Height="30"/>
+            <Label Background="Transparent" HorizontalAlignment="Center" Width="80" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" >105341</Label>
+        </Canvas>
+        <Canvas Canvas.Left="110" HorizontalAlignment="Center" Width="80" Height="30" Canvas.Bottom="60" Name="slab2">
+            <Rectangle Fill="Red" Width="80" Height="30"/>
+            <Label Name="lblMiddleBar" Background="Transparent" HorizontalAlignment="Center" Width="80" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" >
+                105342</Label>
+        </Canvas>
+        <Canvas Canvas.Left="210" HorizontalAlignment="Center" Width="80" Height="30" Canvas.Bottom="60" Name="slab3">
+            <Rectangle Fill="Red" Width="80" Height="30"/>
+            <Label Background="Transparent" HorizontalAlignment="Center" Width="80" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" >105342</Label>
+        </Canvas>
+    </Canvas>
+    <!--</Grid>-->
 </UserControl>

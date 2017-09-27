@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:ViewsModule.View"
              mc:Ignorable="d" 
              BorderBrush="Black"
-             BorderThickness="5"               
+             BorderThickness="1"               
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid >
         <Grid.Resources>
@@ -22,11 +22,25 @@
             <Button Content="Setup"/>
             <Button Content="Update"/>
             <Button Content="..."/>
-            <Button Content="..."/>
-            <Button Content="..."/>
-            <Button Content="..."/>
-            <Button Content="..."/>
-            <Button Content="..."/>
+            <GroupBox Header="temporary">
+                <GroupBox.Resources>
+                    <ResourceDictionary>
+                        <Style x:Key="{x:Type Button}" TargetType="Button">
+                            <Setter Property="Margin" Value="3,3"/>
+                        </Style>
+                    </ResourceDictionary>
+                </GroupBox.Resources>
+                <StackPanel Orientation="Horizontal">
+                    <Button Click="noBarClick">NoBar</Button>
+                    <Button Click="headDetClick">HeadDet</Button>
+                    <Button Click="tailDetClick">TailDet</Button>
+                    <Button Click="headCutDetClick">HeadCutDet</Button>
+                    <Button Click="tailCutDetClick">TailCutDet</Button>
+                    <Button Click="headDetTransitClick">HeadDetTransit</Button>
+                    <Button Click="headDetTailCutClick">HeadDetTailCut</Button>
+                    <Button Click="transitTailCutClick">TransitTailCut</Button>
+                </StackPanel>
+            </GroupBox>
         </StackPanel>
     </Grid>
 </UserControl>

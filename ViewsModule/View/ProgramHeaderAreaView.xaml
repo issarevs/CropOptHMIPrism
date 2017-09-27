@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:ViewsModule.View"
              mc:Ignorable="d" 
              BorderBrush="Black"
-             BorderThickness="5"  
+             BorderThickness="1"  
              d:DesignHeight="300" d:DesignWidth="1000">
     <Grid >
         <Grid.Resources>

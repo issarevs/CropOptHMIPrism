@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GalaSoft.MvvmLight.Messaging;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using ViewsModule.Messages;
 
 namespace ViewsModule.View
 {
@@ -23,6 +13,46 @@ namespace ViewsModule.View
         public FunctionKeyView()
         {
             InitializeComponent();
+        }
+
+        private void noBarClick(object sender, RoutedEventArgs e)
+        {
+            Messenger.Default.Send<GenericMessage<SystemState>>(new GenericMessage<SystemState>(SystemState.NoBar));
+        }
+
+        private void headDetClick(object sender, RoutedEventArgs e)
+        {
+            Messenger.Default.Send<GenericMessage<SystemState>>(new GenericMessage<SystemState>(SystemState.HeadDet));
+        }
+
+        private void tailDetClick(object sender, RoutedEventArgs e)
+        {
+            Messenger.Default.Send<GenericMessage<SystemState>>(new GenericMessage<SystemState>(SystemState.TailDet));
+        }
+
+        private void headCutDetClick(object sender, RoutedEventArgs e)
+        {
+            Messenger.Default.Send<GenericMessage<SystemState>>(new GenericMessage<SystemState>(SystemState.HeadCutDet));
+        }
+
+        private void tailCutDetClick(object sender, RoutedEventArgs e)
+        {
+            Messenger.Default.Send<GenericMessage<SystemState>>(new GenericMessage<SystemState>(SystemState.TailCutDet));
+        }
+
+        private void headDetTransitClick(object sender, RoutedEventArgs e)
+        {
+            Messenger.Default.Send<GenericMessage<SystemState>>(new GenericMessage<SystemState>(SystemState.HeadDetTransit));
+        }
+
+        private void headDetTailCutClick(object sender, RoutedEventArgs e)
+        {
+            Messenger.Default.Send<GenericMessage<SystemState>>(new GenericMessage<SystemState>(SystemState.HeadDetTailCut));
+        }
+
+        private void transitTailCutClick(object sender, RoutedEventArgs e)
+        {
+            Messenger.Default.Send<GenericMessage<SystemState>>(new GenericMessage<SystemState>(SystemState.TransitTailCut));
         }
     }
 }
